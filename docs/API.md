@@ -252,6 +252,12 @@ window.FirebasePlugin.getValue("key", function(value) {
 }, function(error) {
     console.error(error);
 });
+// or, specify a namespace for the config value
+window.FirebasePlugin.getValue("key", "namespace", function(value) {
+    console.log(value);
+}, function(error) {
+    console.error(error);
+});
 ```
 
 ## getByteArray (Android only)
@@ -259,6 +265,15 @@ window.FirebasePlugin.getValue("key", function(value) {
 Retrieve a Remote Config byte array:
 ```
 window.FirebasePlugin.getByteArray("key", function(bytes) {
+    // a Base64 encoded string that represents the value for "key"
+    console.log(bytes.base64);
+    // a numeric array containing the values of the byte array (i.e. [0xFF, 0x00])
+    console.log(bytes.array);
+}, function(error) {
+    console.error(error);
+});
+// or, specify a namespace for the byte array
+window.FirebasePlugin.getByteArray("key", "namespace", function(bytes) {
     // a Base64 encoded string that represents the value for "key"
     console.log(bytes.base64);
     // a numeric array containing the values of the byte array (i.e. [0xFF, 0x00])
@@ -317,6 +332,8 @@ var defaults = {
 }
 // set defaults
 window.FirebasePlugin.setDefaults(defaults);
+// or, specify a namespace
+window.FirebasePlugin.setDefaults(defaults, "namespace");
 ```
 
 ## startTrace
