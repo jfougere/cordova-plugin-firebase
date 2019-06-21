@@ -61,7 +61,6 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 		<framework src="com.google.firebase:firebase-config:16.+" />
 		<framework src="com.google.firebase:firebase-perf:16.+" />
 		<framework src="com.google.firebase:firebase-iid:17.+" />
-		<framework src="com.google.firebase:firebase-auth:16.+" />
 
 	</platform>
 
